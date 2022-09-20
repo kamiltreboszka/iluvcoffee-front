@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="coffee__container">
+  <div class="coffee__title">Coffee Add</div>
+  <div class="coffee__form">
+    <form 
+      *ngIf="form"  
+      [formGroup]="form"
+    >
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Coffee Name</mat-label>
+        <input 
+          matInput 
+          placeholder="Name"
+          formControlName="name"
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Coffee Brand</mat-label>
+        <input 
+          matInput 
+          placeholder="Brand" 
+          formControlName="brand"
+        >
+      </mat-form-field>
+
+      <ng-container>
+        <hr>
+        <h3>Coffees Flavors</h3>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Coffee Flavor</mat-label>
+          <input 
+            matInput 
+            placeholder="Flavor" 
+            formControlName="flavor"
+          >
+        </mat-form-field>
+
+        <div *ngFor="let flavor of newFlavors; index as i">
+          <span> Flavor: {{ flavor }}</span>  
+          <button 
+            (click)="removeFlavor(i)"
+            style="padding:5px;width:30px;margin-left:5px;"
+          >X</button>
+        </div>
+
+        <button mat-raised-button (click)="addFlavor()">Add flavor</button>
+        
+      </ng-container>
+      
+
+      <button 
+        class="coffee__add-btn"
+        mat-raised-button 
+        (click)="addCoffee()"
+        >Add Coffee 
+      </button>
+    </form>
+    
+  </div>
+</div>
+
+

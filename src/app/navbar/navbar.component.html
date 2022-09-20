@@ -1,0 +1,32 @@
+<mat-toolbar class="navbar__container">
+  <div class="navbar__menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/coffees">Coffee List</button>
+      <button mat-menu-item routerLink="/coffees/add">Add Coffe</button>
+    </mat-menu>
+  </div>
+  
+  <div class="navbar__title">
+    I Luv Coffee
+  </div>
+
+  <div>
+    <button 
+      mat-icon-button 
+      class="navbar__action--btn example-icon favorite-icon" 
+      aria-label="Example icon-button with heart icon"
+    ><mat-icon>favorite</mat-icon>
+    </button>
+
+    <button 
+      mat-icon-button 
+      class="navbar__action--btn example-icon" 
+      aria-label="Example icon-button with share icon"
+    ><mat-icon>share</mat-icon>
+    </button>
+  </div>
+  
+</mat-toolbar>

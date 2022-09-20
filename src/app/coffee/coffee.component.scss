@@ -1,0 +1,34 @@
+.coffee {
+  &__container {
+    width: auto;
+    margin: 10px 20px;
+  }
+  &__title {
+    font-size: 18px;
+  }
+  &__table {
+    td {
+      border: 1px solid var(--white-bg-hover);
+      padding: 8px;
+      cursor: pointer;
+    }
+    tr:nth-child(even) {
+      background-color: var(--white-bg);
+    }
+    tr:hover {
+      background-color: var(--white-bg-hover);
+    }
+    th {
+      padding: 12px;
+      text-align: left;
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+  }
+}
+
+.width {
+  &--20 {
+    width: 20vw;
+  }
+}

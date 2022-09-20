@@ -1,0 +1,21 @@
+.navbar {
+  &__container {
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+  }
+  &__menu {
+    min-width: 60px;
+  }
+  &__title {
+    font-size: 21px;
+    margin: 0;
+    margin-right: auto;
+  }
+  &__action {
+    &--btn {
+      margin-left: 20px;
+    }
+  }
+}

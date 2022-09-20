@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="coffee__container">
+  <h1 class="coffee__title">COFFEES LIST</h1>
+
+  <table class="coffee__table">
+    <tr>
+      <th class="width--20"> Coffee Name </th>
+      <th class="width--20"> Coffee Brand </th>
+      <th class="width--20"> Recommendations Count</th>
+      <th class="width--20"> Flavors </th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of coffee" (click)="editCoffee(item)">
+      <td class="width--20"> {{ item.name }} </td>
+      <td class="width--20"> {{ item.brand }} </td>
+      <td class="width--20"> {{ item.recommendations }}</td>
+      <td class="width--20">
+        <span *ngFor="let flavors of item.flavors">
+          {{ flavors.name }} <br>
+        </span> 
+      </td>
+      <td>
+        <button 
+          mat-icon-button
+          (click)="deleteCoffee(item.id)"
+        ><mat-icon>delete</mat-icon> 
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

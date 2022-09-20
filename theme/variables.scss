@@ -1,0 +1,23 @@
+$primary-color: #04AA6D;
+$primary-hover-color: #06EB97;
+
+$secondary-color: #038757;
+$secondary-hover-color: #049862;
+
+$white: #ffffff;
+$white-bg: #f2f2f2;
+$white-bg-hover: #dddddd;
+
+
+
+:root {
+  --primary-color: #{$primary-color};
+  --primary-hover-color: #{$primary-hover-color};
+
+  --secondary-color: #{$secondary-color};
+  --secondary-hover-color: #{$secondary-hover-color};
+
+  --white: #{$white};
+  --white-bg: #{$white-bg};
+  --white-bg-hover: #{$white-bg-hover};
+}

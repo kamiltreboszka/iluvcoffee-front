@@ -1,0 +1,20 @@
+.coffee {
+  &__container {
+    width: auto;
+    margin: 10px 20px;
+  }
+  &__title {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  &__form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__add-btn {
+    color: var(--white);
+    background-color: var(--primary-color);
+    float: right;
+  }
+}
