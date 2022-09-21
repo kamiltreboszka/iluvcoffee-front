@@ -3,6 +3,46 @@
 <div class="coffee__container">
   <h1 class="coffee__title">COFFEES LIST</h1>
 
+  <div class="coffee__filter">
+    <mat-form-field 
+      appearance="outline" 
+      floatLabel="always" 
+      class="coffee__filter--margin"
+    >
+      <mat-label>Amount of Limit</mat-label>
+      <input 
+        matInput 
+        type="number" 
+        class="example-right-align" 
+        placeholder="0"
+        [formControl]="limit"
+      >
+    </mat-form-field>
+
+    <mat-form-field 
+      appearance="outline" 
+      floatLabel="always" 
+      class="coffee__filter--margin"
+    >
+      <mat-label>Amount of Offset</mat-label>
+      <input 
+        matInput 
+        type="number" 
+        class="example-right-align" 
+        placeholder="0"
+        [formControl]="offset"
+      >
+    </mat-form-field>
+
+    <button 
+      class="button__filter"
+      mat-icon-button
+      (click)="getFiltredCoffee()"
+    ><mat-icon>search</mat-icon> 
+    </button>
+
+  </div>
+
   <table class="coffee__table">
     <tr>
       <th class="width--20"> Coffee Name </th>
