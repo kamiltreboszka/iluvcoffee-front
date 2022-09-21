@@ -17,6 +17,7 @@ import { CoffeeAddComponent } from './coffee/coffee-add/coffee-add.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CoffeeEditComponent } from './coffee/coffee-edit/coffee-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     CoffeeComponent,
     NavbarComponent,
     CoffeeAddComponent,
-
+    CoffeeEditComponent
   ],
   imports: [
     BrowserModule,

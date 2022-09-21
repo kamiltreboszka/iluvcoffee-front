@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Coffee } from './coffee.model';
+import { Coffee, uCoffee } from './coffee.model';
 
 const url = environment.api;
 
@@ -22,14 +22,14 @@ export class CoffeeService {
   }
 
   getById(id: number) {
-    return this.http.get<Coffee[]>(`${url}coffees/${id}`);
+    return this.http.get<Coffee>(`${url}coffees/${id}`);
   }
 
   create(coffee: Coffee) {
     return this.http.post(url + 'coffees', coffee);
   }
 
-  update(coffee: Coffee, id: number) {
+  update(coffee: uCoffee, id: number) {
     return this.http.patch(`${url}coffees/${id}`, coffee);
   }
 

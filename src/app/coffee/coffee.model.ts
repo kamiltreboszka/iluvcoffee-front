@@ -11,4 +11,8 @@ export class Flavor {
   name: string;
 }
 
-
+export class uCoffee {
+  name: string;
+  brand: string;
+  flavors: string[];
+}

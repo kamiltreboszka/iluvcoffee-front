@@ -55,11 +55,13 @@ export class CoffeeAddComponent implements OnInit {
   addFlavor() {
     console.log(this.form.value)
     const value = this.form.value;
-    this.newFlavors.push(value.flavor);
-
-    this.form.patchValue({
-      flavor: null
-    })
+    if(value.flavor != null) {
+      this.newFlavors.push(value.flavor);
+      
+      this.form.patchValue({
+        flavor: null
+      })
+    }
   }
 
   removeFlavor(index: number) {

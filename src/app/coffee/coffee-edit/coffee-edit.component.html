@@ -1,1 +1,76 @@
-<p>coffee-edit works!</p>
+<app-navbar></app-navbar>
+
+<div class="coffee__container">
+  <div class="coffee__title">Coffee Add</div>
+  <div class="coffee__form">
+    <form 
+      *ngIf="form && coffee"  
+      [formGroup]="form"
+    >
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Coffee Name</mat-label>
+        <input 
+          matInput 
+          placeholder="Name"
+          formControlName="name"
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Coffee Brand</mat-label>
+        <input 
+          matInput 
+          placeholder="Brand" 
+          formControlName="brand"
+        >
+      </mat-form-field>
+
+      <ng-container>
+        <hr>
+        <h3 class="no-margin">Coffees Flavors</h3>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Coffee Flavor</mat-label>
+          <input 
+            matInput 
+            placeholder="Flavor" 
+            formControlName="flavor"
+          >
+        </mat-form-field>
+
+        <div class="coffee__btn-row coffee__btn-row--bottom">
+          <button 
+            mat-raised-button 
+            (click)="addFlavor()"
+            >Add flavor
+          </button>
+        </div>
+
+        <table class="coffee__table">
+          <tr>
+            <th>Flavor Name</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let flavor of flavors; index as i">
+            <td>{{ flavor }}</td>
+            <td>
+              <button 
+                mat-icon-button
+                (click)="removeFlavor(i)"
+              >X</button>
+            </td>
+          </tr>
+        </table>
+      </ng-container>
+
+      <div class="coffee__btn-row coffee__btn-row--top">
+        <button 
+          class="coffee__add-btn"
+          mat-raised-button 
+          (click)="updateCoffee()"
+          >Update Coffee
+        </button>
+      </div>
+    </form>
+    
+  </div>
+</div>

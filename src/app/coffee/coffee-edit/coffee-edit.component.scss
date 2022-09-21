@@ -1,0 +1,51 @@
+.coffee {
+  &__container {
+    width: auto;
+    margin: 10px 20px;
+  }
+  &__title {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  &__form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__add-btn {
+    color: var(--white);
+    background-color: var(--primary-color);
+    float: right;
+  }
+  &__table {
+    width: 300px;
+    td {
+      border: 1px solid var(--white-bg-hover);
+      padding: 8px;
+      width: 80%;
+    }
+    tr:nth-child(even) {
+      background-color: var(--white-bg);
+    }
+    th {
+      padding: 12px;
+      text-align: left;
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+  }
+  &__btn-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    &--top {
+      margin-top: 10px;
+    }
+    &--bottom {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
