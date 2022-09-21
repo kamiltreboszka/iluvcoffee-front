@@ -18,15 +18,16 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CoffeeEditComponent } from './coffee/coffee-edit/coffee-edit.component';
-
-
+import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
     CoffeeComponent,
     NavbarComponent,
     CoffeeAddComponent,
-    CoffeeEditComponent
+    CoffeeEditComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { CoffeeEditComponent } from './coffee/coffee-edit/coffee-edit.component'
     FormsModule, 
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

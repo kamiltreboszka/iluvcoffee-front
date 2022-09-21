@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { QueryParams } from '../_helpers/queryParams.model';
 import { Coffee } from './coffee.model';
 import { CoffeeService } from './coffee.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../dialog/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-coffee',
@@ -23,6 +25,7 @@ export class CoffeeComponent implements OnInit {
     public coffeService: CoffeeService,
     private router: Router,
     private route: ActivatedRoute,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -41,11 +44,25 @@ export class CoffeeComponent implements OnInit {
   }
 
   deleteCoffee(id: number) {
-    this.coffeService.delete(id).subscribe( () => {
-        console.log('Coffee deleted');
-        this.getCoffee();
+    this.dialog.open(ConfirmDialogComponent)
+      .afterClosed()
+        .subscribe(result => {
+          if (result) {
+            this.coffeService.delete(id).subscribe( () => {
+              console.log('Coffee deleted');
+              this.getCoffee();
+            })
+          } else {
+            return
+          }
       }
     )
+
+    // this.coffeService.delete(id).subscribe( () => {
+    //     console.log('Coffee deleted');
+    //     this.getCoffee();
+    //   }
+    // )
   }
 
   editCoffee(row: Coffee) {

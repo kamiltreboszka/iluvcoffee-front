@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Delete file</h1>
+
+<div mat-dialog-content>
+  Would you like to delete coffee?
+</div>
+
+<div mat-dialog-actions class="action-row">
+  <button 
+    mat-button 
+    mat-dialog-close
+    (click)="closeDialog(false)"
+  >No</button>
+
+  <button 
+    mat-button 
+    mat-dialog-close 
+    cdkFocusInitial 
+    (click)="closeDialog(true)"
+  >Ok</button>
+
+</div>

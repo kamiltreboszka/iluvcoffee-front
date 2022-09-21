@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Coffee, Flavor } from '../coffee.model';
 import { CoffeeService } from '../coffee.service';
 import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coffee-add',
@@ -16,6 +17,7 @@ export class CoffeeAddComponent implements OnInit {
 
   constructor(
     public coffeeService: CoffeeService,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +38,9 @@ export class CoffeeAddComponent implements OnInit {
     
     console.log(this.newCoffee);
 
-    this.coffeeService.create(this.newCoffee).subscribe();
+    this.coffeeService.create(this.newCoffee).subscribe( () => {
+      this.router.navigateByUrl('/coffees');
+    });
 
   }
 

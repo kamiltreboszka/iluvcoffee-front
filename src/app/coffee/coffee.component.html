@@ -51,16 +51,31 @@
       <th class="width--20"> Flavors </th>
       <th></th>
     </tr>
-    <tr *ngFor="let item of coffee" (click)="editCoffee(item)">
-      <td class="width--20"> {{ item.name }} </td>
-      <td class="width--20"> {{ item.brand }} </td>
-      <td class="width--20"> {{ item.recommendations }}</td>
-      <td class="width--20">
+    <tr *ngFor="let item of coffee">
+      <td 
+        class="width--20" 
+        (click)="editCoffee(item)"
+        > {{ item.name }} 
+      </td>
+      <td 
+        class="width--20" 
+        (click)="editCoffee(item)"
+        > {{ item.brand }} 
+      </td>
+      <td 
+        class="width--20" 
+        (click)="editCoffee(item)"
+        > {{ item.recommendations }}
+      </td>
+      <td 
+        class="width--20" 
+        (click)="editCoffee(item)"
+      >
         <span *ngFor="let flavors of item.flavors">
           {{ flavors.name }} <br>
         </span> 
       </td>
-      <td>
+      <td (click)="null">
         <button 
           mat-icon-button
           (click)="deleteCoffee(item.id)"

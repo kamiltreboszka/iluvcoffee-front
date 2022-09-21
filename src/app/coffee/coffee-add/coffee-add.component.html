@@ -27,7 +27,7 @@
 
       <ng-container>
         <hr>
-        <h3>Coffees Flavors</h3>
+        <h3 class="no-margin">Coffees Flavors</h3>
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Coffee Flavor</mat-label>
           <input 
@@ -37,25 +37,39 @@
           >
         </mat-form-field>
 
-        <div *ngFor="let flavor of newFlavors; index as i">
-          <span> Flavor: {{ flavor }}</span>  
+        <div class="coffee__btn-row coffee__btn-row--bottom">
           <button 
-            (click)="removeFlavor(i)"
-            style="padding:5px;width:30px;margin-left:5px;"
-          >X</button>
+            mat-raised-button 
+            (click)="addFlavor()"
+            >Add flavor
+          </button>
         </div>
 
-        <button mat-raised-button (click)="addFlavor()">Add flavor</button>
-        
+        <table class="coffee__table">
+          <tr *ngIf="newFlavors.length > 0">
+            <th>Flavor Name</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let flavor of newFlavors; index as i">
+            <td>{{ flavor }}</td>
+            <td>
+              <button 
+                mat-icon-button
+                (click)="removeFlavor(i)"
+              >X</button>
+            </td>
+          </tr>
+        </table>
       </ng-container>
-      
 
-      <button 
-        class="coffee__add-btn"
-        mat-raised-button 
-        (click)="addCoffee()"
-        >Add Coffee 
-      </button>
+      <div class="coffee__btn-row coffee__btn-row--top">
+        <button 
+          class="coffee__add-btn"
+          mat-raised-button 
+          (click)="addCoffee()"
+          >Add Coffee
+        </button>
+      </div>
     </form>
     
   </div>

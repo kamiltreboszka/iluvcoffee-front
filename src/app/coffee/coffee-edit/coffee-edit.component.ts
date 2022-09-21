@@ -28,7 +28,7 @@ export class CoffeeEditComponent implements OnInit {
 
     this.route.paramMap.subscribe(async paramMap => {
       if (!paramMap.has('id')) {
-        this.router.navigateByUrl('coffees');
+        this.router.navigateByUrl('/coffees');
         return;
       }
 
@@ -106,7 +106,9 @@ export class CoffeeEditComponent implements OnInit {
     
     console.log(update);
 
-    this.coffeeService.update(update, this.idCoffee).subscribe();
+    this.coffeeService.update(update, this.idCoffee).subscribe( () => {
+      this.router.navigateByUrl('/coffees');
+    });
 
   }
 
